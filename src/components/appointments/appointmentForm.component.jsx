@@ -43,7 +43,7 @@ const AppointmentForm = ({
       <ContactPicker
           name="contact"
           value={contact}
-          contacts={getContactNames()}
+          getContactNames={getContactNames}
           onChange={setContact}
           placeholder="Appointment With"
         />
