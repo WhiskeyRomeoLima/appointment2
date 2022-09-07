@@ -24,7 +24,10 @@ const AppointmentForm = ({
 
   const getContactNames = () => {
     return contacts.map((contact) => contact.name);
-  };
+  }; 
+
+  date = getTodayString()
+  const contactNames = getContactNames()
 
   return (
     <form onSubmit={handleSubmit}>
@@ -43,7 +46,7 @@ const AppointmentForm = ({
       <ContactPicker
           name="contact"
           value={contact}
-          getContactNames={getContactNames}
+          names = {contactNames}
           onChange={setContact}
           placeholder="Appointment With"
         />
@@ -69,10 +72,9 @@ const AppointmentForm = ({
           required
         />
       </label>
-      {/* <button type="submit" disabled={alert ? true : false} >Add Appointment</button> 
-      <h2 className="alert">{alert}</h2> */}
       <br />	
-      <input type="submit" value="Add Appointment" />
+      <button type="submit" disabled={alert ? true : false} >Add Appointment</button> 
+      <h2 className="alert">{alert}</h2>
     </form>
   );
 };
